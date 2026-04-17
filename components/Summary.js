@@ -49,7 +49,6 @@ export default function Summary({ route }) {
               const isCorrectChoice = correctArr.includes(ci);
               const userChose = userArr.includes(ci);
 
-              let choiceStyle = styles.choiceNormal;
               let textStyle = styles.choiceText;
 
               if (isCorrectChoice) {
@@ -140,5 +139,4 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
     color: '#c62828',
   },
-  choiceNormal: {},
 });

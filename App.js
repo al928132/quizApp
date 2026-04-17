@@ -24,7 +24,7 @@ const QUESTIONS = [
     correct: 0,
   },
   {
-    prompt: 'Which of the following are primary colors (additive)?',
+    prompt: 'Which of the following are primary colors?',
     type: 'multiple-answer',
     choices: ['Red', 'Yellow', 'Blue', 'Green'],
     correct: [0, 2],
