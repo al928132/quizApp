@@ -12,7 +12,7 @@ export { default as Summary } from './components/Summary';
 
 // Sample questions with correct answers:
 // Q1 (multiple-choice): "Which planet is closest to the Sun?" correct: 0 ("Mercury")
-// Q2 (multiple-answer): "Which of the following are primary colors?" correct: [0,2] ("Red", "Blue")
+// Q2 (multiple-answer): "Which of the following are fruits?" correct: [0,2] ("Apple", "Banana")
 // Q3 (true-false): "The Earth is the third planet from the Sun." correct: 0 ("True")
 // Q4 (multiple-choice): "What is 2 + 2?" correct: 1 ("4")
 // Q5 (multiple-answer): "Which are mammals?" correct: [0,3] ("Dog", "Whale")
@@ -24,9 +24,9 @@ const QUESTIONS = [
     correct: 0,
   },
   {
-    prompt: 'Which of the following are primary colors?',
+    prompt: 'Which of the following are fruits?',
     type: 'multiple-answer',
-    choices: ['Red', 'Yellow', 'Blue', 'Green'],
+    choices: ['Apple', 'Carrot', 'Banana', 'Broccoli'],
     correct: [0, 2],
   },
   {
