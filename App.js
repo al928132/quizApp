@@ -51,8 +51,8 @@ const QUESTIONS = [
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <NavigationContainer style={{ flex: 1 }}>
+      <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { flex: 1 } }}>
         <Stack.Screen
           name="Question"
           component={QuestionScreen}

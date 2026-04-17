@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { ButtonGroup } from '@rneui/themed';
 
 export default function Question({ route, navigation }) {
   const { data, index, answers } = route.params;
@@ -42,18 +41,26 @@ export default function Question({ route, navigation }) {
         Question {index + 1} of {data.length}
       </Text>
       <Text style={styles.prompt}>{question.prompt}</Text>
-      <ButtonGroup
-        testID="choices"
-        buttons={question.choices}
-        selectedIndex={question.type !== 'multiple-answer' ? selected : null}
-        selectedIndexes={question.type === 'multiple-answer' ? selected : []}
-        onPress={handleSelect}
-        selectMultiple={question.type === 'multiple-answer'}
-        vertical
-        containerStyle={styles.buttonGroup}
-        selectedButtonStyle={styles.selectedButton}
-        textStyle={styles.buttonText}
-      />
+      <View style={styles.choicesContainer}>
+        {question.choices.map((choice, idx) => {
+          const isSelected =
+            question.type === 'multiple-answer'
+              ? selected.includes(idx)
+              : selected === idx;
+          return (
+            <TouchableOpacity
+              key={idx}
+              testID={`choice-${idx}`}
+              style={[styles.choiceButton, isSelected && styles.choiceButtonSelected]}
+              onPress={() => handleSelect(idx)}
+            >
+              <Text style={[styles.choiceText, isSelected && styles.choiceTextSelected]}>
+                {choice}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
       <TouchableOpacity
         testID="next-question"
         style={[
@@ -95,16 +102,27 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     textAlign: 'center',
   },
-  buttonGroup: {
+  choicesContainer: {
     marginBottom: 24,
+  },
+  choiceButton: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 14,
     borderRadius: 8,
+    marginBottom: 8,
   },
-  selectedButton: {
+  choiceButtonSelected: {
     backgroundColor: '#4a90e2',
+    borderColor: '#4a90e2',
   },
-  buttonText: {
+  choiceText: {
     fontSize: 16,
     color: '#333',
+  },
+  choiceTextSelected: {
+    color: '#fff',
   },
   nextButton: {
     backgroundColor: '#4a90e2',

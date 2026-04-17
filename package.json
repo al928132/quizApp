@@ -15,22 +15,14 @@
     "@rneui/themed": "^5.0.0",
     "expo": "~54.0.33",
     "expo-status-bar": "~3.0.9",
-<<<<<<< HEAD
-    "react": "^19.2.5",
-=======
     "react": "19.1.0",
->>>>>>> dea90ceffc2910f4a999ba4cf3e2b1d1b84830b6
     "react-dom": "19.1.0",
     "react-native": "0.81.5",
     "react-native-safe-area-context": "^5.7.0",
     "react-native-screens": "^4.24.0",
-<<<<<<< HEAD
     "react-native-vector-icons": "^10.3.0",
     "react-native-web": "^0.21.0",
-    "react-test-renderer": "^19.2.5"
-=======
-    "react-native-vector-icons": "^10.3.0"
->>>>>>> dea90ceffc2910f4a999ba4cf3e2b1d1b84830b6
+    "react-test-renderer": "^19.0.0"
   },
   "private": true
 }
